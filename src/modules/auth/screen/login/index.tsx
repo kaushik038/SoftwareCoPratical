@@ -39,7 +39,7 @@ const Login = () => {
         type: 'success',
         text1: 'Login successfully!',
       });
-      console.log('data?.data?.token : ', data?.data?.token);
+
       if (data?.data?.token) {
         setItem(AUTH_TOKEN, data?.data?.token);
         setTimeout(() => {
@@ -89,7 +89,7 @@ const Login = () => {
     <View style={styles.container}>
       <CustomImage source={Images.loginBackground} style={styles.image} />
       <Formik
-        initialValues={{ email: 'user1', password: 'password' }}
+        initialValues={{ email: '', password: '' }}
         onSubmit={onHandleSubmit}
       >
         {({ handleChange, values, handleSubmit }) => (

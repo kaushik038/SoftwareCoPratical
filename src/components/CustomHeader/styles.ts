@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
+    backgroundColor: Colors.white,
   },
   titleHeaderView: {
     alignItems: 'center',
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
   },
   rightTitle: {
     fontSize: moderateScale(18),
-    fontFamily: FONTS_FMALIY[500],
+    fontFamily: FONTS_FMALIY[600],
     color: Colors.red,
   },
   backButton: {

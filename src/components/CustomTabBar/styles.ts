@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
   },
   tab: {
-    marginTop: moderateScale(20),
+    marginTop: moderateScale(24),
     paddingVertical: moderateScale(8),
     paddingHorizontal: moderateScale(16),
     borderRadius: moderateScale(20),
@@ -25,12 +25,15 @@ const styles = StyleSheet.create({
     gap: moderateScale(4),
   },
   icon: {
-    fontSize: moderateScale(18),
+    fontSize: moderateScale(24),
     color: Colors.black32,
   },
   focusIcon: {
-    fontSize: moderateScale(18),
+    fontSize: moderateScale(24),
     color: Colors.white,
+  },
+  profileIcon: {
+    fontSize: moderateScale(22),
   },
   title: {
     fontSize: moderateScale(12),

@@ -20,7 +20,7 @@ function App() {
     <SafeAreaProvider>
       <Provider store={appStore}>
         <QueryClientProvider client={queryClient}>
-          <StatusBar barStyle={'dark-content'} />
+          <StatusBar barStyle={'dark-content'} translucent={true} />
           <Routes />
           <Toast position="bottom" />
         </QueryClientProvider>

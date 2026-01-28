@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native';
+import { TextStyle, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 import CustomText from 'AppCompoments/CustomText';
 import CustomIcon from 'AppCompoments/CustomIcon';
@@ -11,6 +11,7 @@ interface SettingItemButtonProps {
   iconName: string;
   title: string;
   onPress?: () => void;
+  leftIcon?: TextStyle;
 }
 
 const Profile = () => {
@@ -27,11 +28,12 @@ const Profile = () => {
     iconName,
     title,
     onPress,
+    leftIcon,
   }) => {
     return (
       <TouchableOpacity style={styles.button} onPress={onPress}>
         <View style={styles.titleView}>
-          <CustomIcon name={iconName} style={styles.leftIcon} />
+          <CustomIcon name={iconName} style={[styles.leftIcon, leftIcon]} />
           <CustomText value={title} style={styles.title} />
         </View>
         <CustomIcon name={ICONS.NEXT} style={styles.nextIcon} />
@@ -45,6 +47,7 @@ const Profile = () => {
         iconName={ICONS.MIC}
         title={'Audio Recording'}
         onPress={handleAudioRecordingPress}
+        leftIcon={styles.minIcon}
       />
       <SettingItemButton
         iconName={ICONS.NOTIFICATION}

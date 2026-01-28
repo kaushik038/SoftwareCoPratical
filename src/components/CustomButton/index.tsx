@@ -12,7 +12,7 @@ import Colors from 'AppSrc/theme/colors';
 interface CustomButtonProps {
   title: string;
   onPress: () => void;
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
   textStyle?: TextStyle;
   isLoading?: boolean;
 }

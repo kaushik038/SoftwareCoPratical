@@ -14,18 +14,21 @@ interface CustomTabBarProps {
 
 const CustomTabBar: React.FC<CustomTabBarProps> = ({ route, focused }) => {
   let iconName = '';
-  console.log('route.name : ', route.name);
   if (route.name === 'Home') {
-    iconName = ICONS.HOME;
+    iconName = focused ? ICONS.HOME_FOCUS : ICONS.HOME;
   } else if (route.name === 'Profile') {
-    iconName = ICONS.USER;
+    iconName = focused ? ICONS.USER_FOCUSE : ICONS.USER;
   }
 
   return (
     <View style={[styles.tab, focused && styles.selectedTab]}>
       <CustomIcon
         name={iconName}
-        style={[styles.icon, focused && styles.focusIcon]}
+        style={[
+          styles.icon,
+          focused && styles.focusIcon,
+          route.name === 'Profile' && styles.profileIcon,
+        ]}
       />
       {focused && <CustomText value={route.name} style={styles.title} />}
     </View>

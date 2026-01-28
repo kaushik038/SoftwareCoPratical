@@ -8,8 +8,7 @@ import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { ROUTE_NAME } from 'AppRoutes/constant';
 import { useStores } from 'AppMpdules/home/api';
-
-const DATA = [1, 2, 3, 4];
+import StoreItemLoader from '../StoreItemLoader';
 
 export interface Store {
   category: string;
@@ -26,15 +25,23 @@ export interface Store {
 const StoreCarousel = () => {
   const navigation = useNavigation();
 
-  const { data } = useStores();
+  const { data, isLoading } = useStores();
 
   const rendarItem: ListRenderItem<Store> = useCallback(({ item }) => {
-    return <StoreItem item={item}/>;
+    return <StoreItem item={item} />;
   }, []);
 
   const handleViewAllOnPress = useCallback(() => {
     navigation.navigate(ROUTE_NAME.VIEW_ALL as never);
   }, []);
+
+  if (isLoading) {
+    return <StoreItemLoader />;
+  }
+
+  if (!(data?.data?.data?.length > 0)) {
+    return null;
+  }
 
   return (
     <View style={styles.container}>

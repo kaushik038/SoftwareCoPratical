@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: moderateScale(24),
+    backgroundColor: Colors.white,
   },
   headreTxt: {
     fontSize: moderateScale(18),

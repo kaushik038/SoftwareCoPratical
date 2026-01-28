@@ -24,6 +24,8 @@ import CustomIcon from 'AppCompoments/CustomIcon';
 import ICONS from 'AppUtils/icons';
 import { View } from 'react-native';
 import CustomTabBar from 'AppCompoments/CustomTabBar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { moderateScale } from 'AppSrc/utils/scalingUtils';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,10 +79,17 @@ export default function Routes() {
   };
 
   const HomeTab = () => {
+    const insets = useSafeAreaInsets();
     return (
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarShowLabel: false,
+          tabBarStyle: {
+            borderTopWidth: 0,
+            elevation: 0,
+            height: moderateScale(64),
+            justifyContent: 'center',
+          },
           tabBarIcon: ({ focused }) => {
             return <CustomTabBar route={route} focused={focused} />;
           },

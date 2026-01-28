@@ -10,9 +10,10 @@ import {
   NotificationPreference,
   setNotifications,
 } from 'AppSrc/redux/notificationSlice';
+import NotificationLoader from 'AppSrc/components/NotificationLoader';
 
 const Notification = () => {
-  const { data } = useNotifications();
+  const { data, isLoading } = useNotifications();
   const dispatch = useDispatch();
   const notifications = useSelector((state: any) => state.notifications?.list);
 
@@ -29,6 +30,14 @@ const Notification = () => {
     [],
   );
 
+  if (isLoading) {
+    return (
+      <View style={styles.container}>
+        <NotificationLoader />
+      </View>
+    );
+  }
+
   if (notifications?.length == 0) {
     return null;
   }
@@ -39,6 +48,7 @@ const Notification = () => {
         data={notifications}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
+        keyExtractor={item => item._id}
       />
     </View>
   );

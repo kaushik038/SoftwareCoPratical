@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
     borderRadius: moderateScale(10),
     gap: moderateScale(10),
-    marginBottom: moderateScale(25),
+    marginVertical: moderateScale(12.5),
   },
-  titleView:{
-    width:"80%"
+  titleView: {
+    width: '80%',
   },
   title: {
     fontSize: moderateScale(16),

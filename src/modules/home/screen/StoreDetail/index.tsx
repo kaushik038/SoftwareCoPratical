@@ -45,19 +45,25 @@ const StoreDetail: React.FC<StoreDetailProps> = ({ route }) => {
   return (
     <View style={styles.container}>
       <CustomImage source={{ uri: storeData?.image }} style={styles.image}>
-        <CustomHeader
-          title=""
-          isLeft={true}
-          isRight={false}
-          navigation={navigation}
-          isDetailPage={true}
-        />
         <View style={styles.headerImageView}>
-          <CustomImage source={{ uri: storeData?.image }} style={styles.logo} />
-          <CustomText value={storeData?.name} style={styles.name} />
-          <View style={styles.categoryView}>
-            <CustomIcon name={ICONS.DOT} style={styles.dot} />
-            <CustomText value={storeData?.category} style={styles.type} />
+          <CustomHeader
+            title=""
+            isLeft={true}
+            isRight={false}
+            navigation={navigation}
+            isDetailPage={true}
+            headerStyle={styles.headerView}
+          />
+          <View style={styles.imageInnerView}>
+            <CustomImage
+              source={{ uri: storeData?.image }}
+              style={styles.logo}
+            />
+            <CustomText value={storeData?.name} style={styles.name} />
+            <View style={styles.categoryView}>
+              <CustomIcon name={ICONS.DOT} style={styles.dot} />
+              <CustomText value={storeData?.category} style={styles.type} />
+            </View>
           </View>
         </View>
       </CustomImage>

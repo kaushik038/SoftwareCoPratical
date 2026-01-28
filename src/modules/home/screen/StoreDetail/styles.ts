@@ -6,6 +6,10 @@ import Colors from 'AppTheme/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors.white,
+  },
+  headerView: {
+    backgroundColor: Colors.transparent,
   },
   image: {
     width: '100%',
@@ -32,6 +36,9 @@ const styles = StyleSheet.create({
   headerImageView: {
     flex: 1,
     backgroundColor: Colors.black50,
+  },
+  imageInnerView: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -1,12 +1,13 @@
+import Colors from 'AppSrc/theme/colors';
+import { moderateScale } from 'AppSrc/utils/scalingUtils';
 import { StyleSheet } from 'react-native';
-import Colors from 'theme/colors';
-import { moderateScale } from 'utils/scalingUtils';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: Colors.white,
   },
   image: {
     height: moderateScale(241),

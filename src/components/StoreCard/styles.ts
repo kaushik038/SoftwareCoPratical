@@ -8,7 +8,6 @@ const width = Dimensions.get('screen').width;
 
 const styles = StyleSheet.create({
   image: {
-    // width: (width - moderateScale(44)) / 1.8,
     height: moderateScale(188),
     borderRadius: moderateScale(20),
   },
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(14),
     fontFamily: FONTS_FMALIY[400],
     color: Colors.gray,
-    width: '40%',
+    width: '50%',
   },
   contentContainerStyle: {
     paddingLeft: moderateScale(24),
@@ -40,11 +39,13 @@ const styles = StyleSheet.create({
   cardBottomRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   star: {
     marginHorizontal: moderateScale(1),
   },
   button: {
+    width: (width - moderateScale(44)) / 2,
     height: moderateScale(38),
     paddingHorizontal: moderateScale(11),
     paddingVertical: moderateScale(10),

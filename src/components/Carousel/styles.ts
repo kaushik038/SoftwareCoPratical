@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   image: {
     aspectRatio: 16 / 8,
     width: width - moderateScale(48),
-    height: moderateScale(147),
+    height: moderateScale(142),
     borderRadius: moderateScale(16),
     marginHorizontal: moderateScale(24),
   },
@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
     marginLeft: moderateScale(24),
   },
   imageInnerView: {
-    flex: 1,
+    height: '100%',
     backgroundColor: Colors.black50,
     paddingVertical: moderateScale(24),
-    paddingHorizontal: moderateScale(12),
+    paddingHorizontal: moderateScale(15),
   },
   imageTitle: {
     fontSize: moderateScale(25),

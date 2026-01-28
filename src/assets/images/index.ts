@@ -4,4 +4,5 @@ export const Images = {
   location: require('./location.png'),
   checked: require('./checked.webp'),
   unchecked: require('./unchecked.webp'),
+  defaultImage: require('./defaultImage.webp'),
 };

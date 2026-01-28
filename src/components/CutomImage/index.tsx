@@ -1,4 +1,8 @@
-import FastImage, { FastImageProps } from '@d11/react-native-fast-image';
+import FastImage, {
+  FastImageProps,
+  Source,
+} from '@d11/react-native-fast-image';
+import { Images } from 'AppSrc/assets/images';
 import * as React from 'react';
 
 const CustomImage = ({ source, style, ...props }: FastImageProps) => {

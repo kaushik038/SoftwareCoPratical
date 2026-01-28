@@ -17,3 +17,5 @@
   **[] $VALUES;
   public *;
 }
+
+-keep class com.google.android.gms.common.** {*;}

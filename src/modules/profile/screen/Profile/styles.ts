@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: moderateScale(24),
+    backgroundColor: Colors.white,
   },
   headreTxt: {
     fontSize: moderateScale(18),
@@ -18,10 +19,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: moderateScale(16),
-    fontFamily: FONTS_FMALIY[500],
+    fontFamily: FONTS_FMALIY[600],
+    lineHeight: moderateScale(27.2),
   },
   nextIcon: {
-    fontSize: moderateScale(10),
+    fontSize: moderateScale(12),
     color: Colors.gray,
   },
   button: {
@@ -33,6 +35,10 @@ const styles = StyleSheet.create({
   titleView: {
     flexDirection: 'row',
     gap: moderateScale(16),
+  },
+  minIcon: {
+    fontSize: moderateScale(28),
+    color: Colors.black,
   },
 });
 

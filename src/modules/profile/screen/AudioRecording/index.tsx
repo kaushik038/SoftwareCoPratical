@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Platform, TouchableOpacity, View } from 'react-native';
+import { Alert, Linking, Platform, TouchableOpacity, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 import styles from './styles';
@@ -7,7 +7,12 @@ import CustomText from 'AppCompoments/CustomText';
 import recordingAnim from 'AppAssets/json/recording.json';
 import CircleButton from 'AppCompoments/CircleButton';
 import ICONS from 'AppUtils/icons';
-import { request, PERMISSIONS } from 'react-native-permissions';
+import {
+  request,
+  PERMISSIONS,
+  PermissionStatus,
+  openSettings,
+} from 'react-native-permissions';
 import Sound from 'react-native-nitro-sound';
 import RNFS from 'react-native-fs';
 import { getAudioDirectory } from 'AppSrc/utils/helper';
@@ -18,6 +23,7 @@ const AudioRecording = () => {
   const [startRecording, setStartRecording] = useState(false);
   const [recordFileUrl, setRecordFileUrl] = useState('');
   const [audioPlay, setAudioPlay] = useState(false);
+  const [audioPause, setAudioPause] = useState(false);
   const [recordTime, setRecordTime] = useState('00:00:00');
   const [playTime, setPlayTime] = useState('00:00:00');
   const [duration, setDuration] = useState('00:00:00');
@@ -30,7 +36,7 @@ const AudioRecording = () => {
     }
   }, []);
 
-  const onStartRecord = async () => {
+  const startRecord = async () => {
     try {
       animationRef?.current?.play();
       setStartRecording(true);
@@ -56,6 +62,53 @@ const AudioRecording = () => {
       });
     }
   };
+
+  const checkPremission = (res: PermissionStatus) => {
+    switch (res) {
+      case 'granted':
+        startRecord();
+        break;
+      case 'blocked':
+        Alert.alert(
+          'Permission',
+          'Recording is blocked. Please allow microphone permission in Settings.',
+          [
+            { text: 'Cancel' },
+            {
+              text: 'Open Setting',
+              onPress: () => {
+                openSettings('application').catch(() =>
+                  console.warn('Cannot open app settings'),
+                );
+              },
+            },
+          ],
+        );
+        break;
+      case 'denied':
+        request(PERMISSIONS.IOS.MICROPHONE);
+        break;
+      case 'unavailable':
+        Toast.show({
+          type: 'error',
+          text1: `This feature is currently not available.`,
+        });
+        break;
+    }
+  };
+
+  const onStartRecord = () => {
+    if (Platform.OS == 'ios') {
+      request(PERMISSIONS.IOS.MICROPHONE).then(res => {
+        checkPremission(res);
+      });
+    } else {
+      request(PERMISSIONS.ANDROID.RECORD_AUDIO).then(res => {
+        checkPremission(res);
+      });
+    }
+  };
+
   const onStopRecord = async () => {
     try {
       animationRef?.current?.pause();
@@ -84,13 +137,13 @@ const AudioRecording = () => {
 
       // Use the proper playback end listener
       Sound.addPlaybackEndListener(e => {
-        console.log('Playback completed', e);
         setAudioPlay(false);
         setPlayTime('00:00:00');
         animationRef?.current?.pause();
       });
       animationRef?.current?.play();
       setAudioPlay(true);
+      setAudioPause(true);
     } catch (error) {
       Toast.show({
         type: 'error',
@@ -100,8 +153,14 @@ const AudioRecording = () => {
   };
 
   const onPausePlay = async () => {
-    animationRef?.current?.pause();
-    await Sound.pausePlayer();
+    setAudioPause(!audioPause);
+    if (audioPause) {
+      animationRef?.current?.pause();
+      await Sound.pausePlayer();
+    } else {
+      animationRef?.current?.play();
+      await Sound.resumePlayer();
+    }
   };
 
   const onStopPlay = async () => {
@@ -167,8 +226,10 @@ const AudioRecording = () => {
         ) : (
           <View style={styles.audioPlayButton}>
             <CircleButton
-              iconName={audioPlay ? ICONS.PAUSE : ICONS.PLAY}
-              label={audioPlay ? 'Pause' : 'Play'}
+              iconName={
+                audioPlay ? (audioPause ? ICONS.PAUSE : ICONS.PLAY) : ICONS.PLAY
+              }
+              label={audioPlay ? (audioPause ? 'Pause' : 'Play') : 'Play'}
               onPress={audioPlay ? onPausePlay : onStartPlay}
             />
             {audioPlay && (

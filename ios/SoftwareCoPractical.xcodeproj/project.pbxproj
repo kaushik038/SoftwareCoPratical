@@ -19,7 +19,7 @@
 		C6CFA4002EA64351A44A5FCE /* PlusJakartaSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757103D60FA94E3FB6DA14B1 /* PlusJakartaSans-Light.ttf */; };
 		CE9F7C1744FD4F2AABC62769 /* PlusJakartaSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D772A4EF2D0049CA8F0B1844 /* PlusJakartaSans-ExtraLight.ttf */; };
 		CF853CA2CDF44CCF8E3CD907 /* PlusJakartaSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1FB2C4143324DAB98A5F30D /* PlusJakartaSans-ExtraBold.ttf */; };
-		F4D0CB2088294C70A7C8C46E /* softwareCoPractical.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E1DD25F314CD49139966C /* softwareCoPractical.ttf */; };
+		E96D899952204A718DBCA332 /* softwareCoPractical.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25C646051FBB47AF957212FD /* softwareCoPractical.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,13 +28,13 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SoftwareCoPractical/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SoftwareCoPractical/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SoftwareCoPractical/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		25C646051FBB47AF957212FD /* softwareCoPractical.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = softwareCoPractical.ttf; path = ../src/assets/fonts/softwareCoPractical.ttf; sourceTree = "<group>"; };
 		66DEAE78E456EA830EEF7DF2 /* Pods-SoftwareCoPractical.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftwareCoPractical.debug.xcconfig"; path = "Target Support Files/Pods-SoftwareCoPractical/Pods-SoftwareCoPractical.debug.xcconfig"; sourceTree = "<group>"; };
 		757103D60FA94E3FB6DA14B1 /* PlusJakartaSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-Light.ttf"; path = "../src/assets/fonts/PlusJakartaSans-Light.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SoftwareCoPractical/AppDelegate.swift; sourceTree = "<group>"; };
 		768423CFEB0B4833994B9984 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-Bold.ttf"; path = "../src/assets/fonts/PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SoftwareCoPractical/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877C8A8627C147CD99163229 /* PlusJakartaSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-Medium.ttf"; path = "../src/assets/fonts/PlusJakartaSans-Medium.ttf"; sourceTree = "<group>"; };
-		8D3E1DD25F314CD49139966C /* softwareCoPractical.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = softwareCoPractical.ttf; path = ../src/assets/fonts/softwareCoPractical.ttf; sourceTree = "<group>"; };
 		A2C0FFDD0E0C4A9287EC7057 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-SemiBold.ttf"; path = "../src/assets/fonts/PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		D1FB2C4143324DAB98A5F30D /* PlusJakartaSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-ExtraBold.ttf"; path = "../src/assets/fonts/PlusJakartaSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		D772A4EF2D0049CA8F0B1844 /* PlusJakartaSans-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-ExtraLight.ttf"; path = "../src/assets/fonts/PlusJakartaSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				768423CFEB0B4833994B9984 /* PlusJakartaSans-Bold.ttf */,
 				D772A4EF2D0049CA8F0B1844 /* PlusJakartaSans-ExtraLight.ttf */,
 				D1FB2C4143324DAB98A5F30D /* PlusJakartaSans-ExtraBold.ttf */,
-				8D3E1DD25F314CD49139966C /* softwareCoPractical.ttf */,
+				25C646051FBB47AF957212FD /* softwareCoPractical.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 				CE9F7C1744FD4F2AABC62769 /* PlusJakartaSans-ExtraLight.ttf in Resources */,
 				CF853CA2CDF44CCF8E3CD907 /* PlusJakartaSans-ExtraBold.ttf in Resources */,
 				B895CB06DE4949FDB2CA7383 /* PrivacyInfo.xcprivacy in Resources */,
-				F4D0CB2088294C70A7C8C46E /* softwareCoPractical.ttf in Resources */,
+				E96D899952204A718DBCA332 /* softwareCoPractical.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,13 +231,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SoftwareCoPractical/Pods-SoftwareCoPractical-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SoftwareCoPractical/Pods-SoftwareCoPractical-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -274,13 +270,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SoftwareCoPractical/Pods-SoftwareCoPractical-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SoftwareCoPractical/Pods-SoftwareCoPractical-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

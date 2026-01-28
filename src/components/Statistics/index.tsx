@@ -9,18 +9,20 @@ import { useCallback, useMemo, useState } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import { useStatistics } from 'AppMpdules/home/api';
 import { moderateScale } from 'AppSrc/utils/scalingUtils';
+import Colors from 'AppSrc/theme/colors';
+import ChartLoader from '../ChartLoader';
 
 const COLORS = [
-  ['#009FFF', '#006DFF'],
-  ['#93FCF8', '#3BE9DE'],
-  ['#BDB2FA', '#8F80F3'],
-  ['#FFA5BA', '#FF7F97'],
-  ['#FFD580', '#FFB347'],
-  ['#A7F3D0', '#34D399'],
-  ['#FBCFE8', '#F472B6'],
-  ['#C7D2FE', '#6366F1'],
-  ['#FED7AA', '#FB923C'],
-  ['#BBF7D0', '#22C55E'],
+  ['#37B5EF', '#37B5EF'],
+  ['#9400BD', '#9400BD'],
+  ['#FF7F3A', '#FF7F3A'],
+  ['#F91E4A', '#F91E4A'],
+  ['#3DC269', '#3DC269'],
+  ['#1F6AE1', '#1F6AE1'],
+  ['#6B21A8', '#6B21A8'],
+  ['#E8590C', '#E8590C'],
+  ['#B91C1C', '#B91C1C'],
+  ['#15803D', '#15803D'],
 ];
 
 interface StatisticsData {
@@ -39,7 +41,7 @@ const Statistics = () => {
     value: 'daily',
   });
 
-  const { data } = useStatistics(selectedFliter?.value);
+  const { data, isLoading } = useStatistics(selectedFliter?.value);
 
   const pieData = useMemo(() => {
     if (data?.data?.data?.length > 0) {
@@ -84,7 +86,7 @@ const Statistics = () => {
             </View>
           );
         }}
-        renderItem={(item, index, isSelected) => {
+        renderItem={item => {
           return (
             <View
               style={{
@@ -101,6 +103,10 @@ const Statistics = () => {
     );
   };
 
+  if (isLoading) {
+    return <ChartLoader />;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.headerView}>
@@ -111,7 +117,8 @@ const Statistics = () => {
         <PieChart
           data={pieData}
           donut
-          showGradient
+          strokeWidth={2}
+          strokeColor={Colors.white}
           sectionAutoFocus
           radius={moderateScale(90)}
           innerRadius={moderateScale(60)}

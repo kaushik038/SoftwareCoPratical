@@ -1,4 +1,4 @@
-import { Touchable, TouchableOpacity, View } from 'react-native';
+import { Touchable, TouchableOpacity, View, ViewStyle } from 'react-native';
 import styles from './styles';
 import CustomIcon from 'AppCompoments/CustomIcon';
 import ICONS from 'AppUtils/icons';
@@ -17,6 +17,7 @@ interface CustomHeaderProps {
   isLeft: boolean;
   navigation: NativeStackNavigationProp<ParamListBase>;
   isDetailPage?: boolean;
+  headerStyle?: ViewStyle;
 }
 
 const CustomHeader: React.FC<CustomHeaderProps> = ({
@@ -25,6 +26,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
   isLeft,
   navigation,
   isDetailPage,
+  headerStyle,
 }) => {
   const insets = useSafeAreaInsets();
 
@@ -41,7 +43,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
   }, []);
 
   return (
-    <View style={[styles.headerView, { marginTop: insets.top }]}>
+    <View style={[styles.headerView, { marginTop: insets.top }, headerStyle]}>
       <View style={styles.titleHeaderView}>
         {isLeft && (
           <TouchableOpacity
